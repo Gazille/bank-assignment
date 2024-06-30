@@ -6,6 +6,7 @@ import {
 } from "../../../models/bank_account/bank_account.interface";
 import Common from "../../../utils/common";
 import Logger from "../../middlewares/logger";
+import UserRepository from "../user/user.repository";
 
 class BankAccountRepository {
   static _tableName = "bank_accounts";
@@ -43,6 +44,27 @@ class BankAccountRepository {
     } catch (err) {
       Logger.error(err);
       return null;
+    }
+  }
+
+  async findByUserId(
+    id: number | undefined
+  ): Promise<IBankAccountSerialized[]> {
+    try {
+      Logger.info(id);
+      const query = `
+        SELECT ba.*
+        FROM ${BankAccountRepository._tableName} ba
+        INNER JOIN users u ON ba.user_id = u.id
+        WHERE u.id = '${id}';
+      `;
+      const bankAccounts = await sequelize.query(query, {
+        type: QueryTypes.SELECT,
+      });
+      return bankAccounts as IBankAccountSerialized[];
+    } catch (err) {
+      Logger.error(err);
+      return [];
     }
   }
 }

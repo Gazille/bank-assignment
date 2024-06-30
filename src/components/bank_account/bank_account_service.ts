@@ -6,6 +6,13 @@ class BankAccountService {
     const result = await bankAccountRepository.create(bankAccount);
     return result;
   }
+
+  async findByUserId(id: number | undefined) {
+    if (id) {
+      const result = await bankAccountRepository.findByUserId(id);
+      return result;
+    }
+  }
 }
 
 export default new BankAccountService();

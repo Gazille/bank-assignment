@@ -9,6 +9,7 @@ import { BadRequestError } from "../../errors/bad-request-error";
 import { Password } from "../../../utils/password";
 import { Request, Response } from "express";
 import userService from "./user.service";
+import bankAccountService from "../bank_account/bank_account_service";
 
 class UserController {
   async signUp(req: Request, res: Response) {
@@ -39,11 +40,6 @@ class UserController {
 
   async login(req: Request, res: Response) {
     const { email, password } = req.body;
-
-    const dataObject: ILoginUser = {
-      email,
-      password,
-    };
 
     const user = await userService.findOneByEmail(email);
     if (!user) {

@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import { ICreateBankAccount } from "../../../models/bank_account/bank_account.interface";
-import customResponse from "../../../utils/custom-response";
+import CustomResponse from "../../../utils/custom-response";
 import Logger from "../../middlewares/logger";
 import bankService from "../bank/bank.service";
+import userService from "../user/user.service";
 import bank_account_service from "./bank_account_service";
 
 class BankAccountController {
@@ -21,9 +22,19 @@ class BankAccountController {
     const bankAccount = await bank_account_service.create(dataOject);
     Logger.info(bankAccount);
     if (bankAccount) {
-      return customResponse.send(res, bankAccount, "Created Successfully", 200);
+      return CustomResponse.send(res, bankAccount, "Created Successfully", 200);
     } else {
       throw new Error();
+    }
+  }
+
+  async getBankAccountsByUserId(req: Request, res: Response) {
+    const user = await userService.findOneById(req.user?.id);
+    if (user) {
+      const bankAccount = await bank_account_service.findByUserId(req.user?.id);
+      CustomResponse.send(res, bankAccount, "Get Successfully", 200);
+    } else {
+      return CustomResponse.sendWithError(res, "Invalid Credentials!", 400);
     }
   }
 }

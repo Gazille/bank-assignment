@@ -44,20 +44,13 @@ class UserRepository {
 
   async create(user: ICreateUser): Promise<IUserSerialized | null> {
     try {
-      const [row, inserted] = await sequelize.query(
-        `insert  into ${UserRepository._tableName} (${Object.keys(user)
-          .map((k) => k)
-          .join(", ")}) VALUES (${Object.values(user)
-          .map((k) => `'${k}'`)
-          .join(", ")}) RETURNING *`,
-        { type: QueryTypes.INSERT }
+      const insertQuery = await Common.dbInsertion(
+        UserRepository._tableName,
+        user
       );
-      if (inserted) {
-        const result = await this.findOneByEmail(user.email);
-        if (result != null) {
-          result.password = undefined;
-        }
-        return result as IUserSerialized;
+      if (insertQuery && insertQuery.inserted) {
+        const newBank = insertQuery.data[0] as IUserSerialized;
+        return newBank;
       }
       return null;
     } catch (err) {
