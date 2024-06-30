@@ -7,13 +7,13 @@ import bank_account_service from "./bank_account_service";
 
 class BankAccountController {
   async create(req: Request, res: Response) {
-    const { name, code, bankId } = req.body;
+    const { name, bankId } = req.body;
     const bank = await bankService.findOneById(bankId);
 
     const dataOject: ICreateBankAccount = {
-      code,
       name,
-      bankId,
+      user_id: req.user?.id,
+      bank_id: bankId,
       init_deposit: bank?.init_deposit || 50000,
       debit: bank?.init_deposit || 50000,
     };

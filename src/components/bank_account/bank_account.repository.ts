@@ -4,6 +4,7 @@ import {
   IBankAccountSerialized,
   ICreateBankAccount,
 } from "../../../models/bank_account/bank_account.interface";
+import Common from "../../../utils/common";
 import Logger from "../../middlewares/logger";
 
 class BankAccountRepository {
@@ -30,19 +31,13 @@ class BankAccountRepository {
     bankAccount: ICreateBankAccount
   ): Promise<IBankAccountSerialized | null> {
     try {
-      const [row, inserted] = await sequelize.query(
-        `insert  into ${BankAccountRepository._tableName} (${Object.keys(
-          bankAccount
-        )
-          .map((k) => k)
-          .join(", ")}) VALUES (${Object.values(bankAccount)
-          .map((k) => `'${k}'`)
-          .join(", ")}) RETURNING *`,
-        { type: QueryTypes.INSERT }
+      const insertQuery = await Common.dbInsertion(
+        BankAccountRepository._tableName,
+        bankAccount
       );
-      if (inserted) {
-        const result = await this.findOneById(bankAccount.bankId);
-        return result as IBankAccountSerialized;
+      if (insertQuery && insertQuery.inserted) {
+        const newBank = insertQuery.data[0] as IBankAccountSerialized;
+        return newBank;
       }
       return null;
     } catch (err) {

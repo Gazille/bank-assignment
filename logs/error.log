@@ -58,3 +58,19 @@
 [Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  syntax error at or near "into"
 [Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "initdeposit" of relation "banks" does not exist
 [Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "initdeposit" of relation "banks" does not exist
+[Sun Jun 30 2024] [ERROR] undefined
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "userid" of relation "bank_accounts" does not exist
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "undefined"
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "undefined"
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [ERROR] jwt malformed
+[Sun Jun 30 2024] [ERROR] jwt malformed
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  null value in column "code" of relation "bank_accounts" violates not-null constraint
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "undefined"
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  insert or update on table "bank_accounts" violates foreign key constraint "bank_accounts_bank_id_fkey"
+[Sun Jun 30 2024] [ERROR] {}

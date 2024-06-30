@@ -1,7 +1,7 @@
 export interface ICreateBankAccount {
   name: string;
-  code: string;
-  bankId: number;
+  user_id: number | undefined;
+  bank_id: number;
   init_deposit: number;
   debit: number;
 }
@@ -9,8 +9,8 @@ export interface ICreateBankAccount {
 export interface IBankAccountSerialized {
   id: number;
   name: string;
-  code: string;
-  bankId: number;
+  user_id: number;
+  bank_id: number;
   init_deposit: number;
   debit: number;
 }

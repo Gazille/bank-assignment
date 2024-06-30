@@ -52,10 +52,6 @@ const BankAccount = sequelize.define("bank_accounts", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  code: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   init_deposit: {
     type: DataTypes.DOUBLE,
     allowNull: false,
@@ -180,11 +176,13 @@ const Transaction = sequelize.define("transactions", {
 
 User.hasMany(BankAccount, {
   foreignKey: "user_id",
+  as: 'user'
 });
 BankAccount.belongsTo(User);
 
 Bank.hasMany(BankAccount, {
   foreignKey: "bank_id",
+  as: 'bank'
 });
 BankAccount.belongsTo(Bank);
 

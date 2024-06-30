@@ -1037,3 +1037,110 @@
 [Sun Jun 30 2024] [INFO] Listening on port 3000!
 [Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
 [Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [ERROR] undefined
+[Sun Jun 30 2024] [INFO] null
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (code, name, userId, bankId, init_deposit, debit)
+      Values ('undefined', 'Tài Khoản 1', 'undefined', '1', '500', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "userid" of relation "bank_accounts" does not exist
+[Sun Jun 30 2024] [INFO] null
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (code, name, user_id, bank_id, init_deposit, debit)
+      Values ('undefined', 'Tài Khoản 1', 'undefined', '1', '500', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "undefined"
+[Sun Jun 30 2024] [INFO] null
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (name, user_id, bank_id, init_deposit, debit)
+      Values ('Tài Khoản 1', 'undefined', '1', '500', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "undefined"
+[Sun Jun 30 2024] [INFO] null
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [ERROR] jwt malformed
+[Sun Jun 30 2024] [ERROR] jwt malformed
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (name, user_id, bank_id, init_deposit, debit)
+      Values ('Tài Khoản 1', '1', '1', '500', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  null value in column "code" of relation "bank_accounts" violates not-null constraint
+[Sun Jun 30 2024] [INFO] null
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (name, user_id, bank_id, init_deposit, debit)
+      Values ('Tài Khoản 1', '1', '1', '500', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] {
+  "id": 1,
+  "bank_id": 1,
+  "user_id": 1,
+  "name": "Tài Khoản 1",
+  "init_deposit": 500,
+  "debit": 500,
+  "createdAt": "2024-06-30T05:36:38.280Z",
+  "updatedAt": "2024-06-30T05:36:38.280Z",
+  "userId": null,
+  "bankId": null
+}
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (name, user_id, bank_id, init_deposit, debit)
+      Values ('Tài Khoản 1', 'undefined', '1', '50000', '50000') RETURNING *;
+    
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "undefined"
+[Sun Jun 30 2024] [INFO] null
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (name, user_id, bank_id, init_deposit, debit)
+      Values ('Tài Khoản 1', '1', '1', '50000', '50000') RETURNING *;
+    
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  insert or update on table "bank_accounts" violates foreign key constraint "bank_accounts_bank_id_fkey"
+[Sun Jun 30 2024] [INFO] null
+[Sun Jun 30 2024] [ERROR] {}
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO banks (name, init_deposit)
+      Values ('TPBank', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO banks (name, init_deposit)
+      Values ('VPBank', '1000') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO bank_accounts (name, user_id, bank_id, init_deposit, debit)
+      Values ('Tài Khoản 1', '1', '1', '500', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] {
+  "id": 2,
+  "bank_id": 1,
+  "user_id": 1,
+  "name": "Tài Khoản 1",
+  "init_deposit": 500,
+  "debit": 500,
+  "createdAt": "2024-06-30T05:38:21.816Z",
+  "updatedAt": "2024-06-30T05:38:21.816Z",
+  "userId": null,
+  "bankId": null
+}
