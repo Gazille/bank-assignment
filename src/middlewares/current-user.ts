@@ -1,40 +1,40 @@
-// import { Request, Response, NextFunction } from "express";
-// import jwt from "jsonwebtoken";
-// import { IUserSerialized } from "../../models/user/user.interface";
-// import User from "../../models/user/user";
+import { Request, Response, NextFunction } from "express";
+import jwt from "jsonwebtoken";
+import { IUserSerialized } from "../../models/user/user.interface";
+import userRepository from "../components/user/user.repository";
 
-// interface UserPayload {
-//   id: number;
-//   email: string;
-// }
+interface UserPayload {
+  id: number;
+  email: string;
+}
 
-// declare global {
-//   namespace Express {
-//     interface Request {
-//       user?: IUserSerialized;
-//     }
-//   }
-// }
+declare global {
+  namespace Express {
+    interface Request {
+      user?: IUserSerialized;
+    }
+  }
+}
 
-// export const currentUser = async (
-//   req: Request,
-//   res: Response,
-//   next: NextFunction
-// ) => {
-//   if (!req.headers.authorization) {
-//     return next();
-//   }
+export const currentUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  if (!req.headers.authorization) {
+    return next();
+  }
 
-//   const bearerToken = req.headers.authorization;
-//   const token = bearerToken.split(" ")[1];
-//   const payload = jwt.verify(token, process.env.JWT_KEY!) as UserPayload;
+  const bearerToken = req.headers.authorization;
+  const token = bearerToken.split(" ")[1];
+  const payload = jwt.verify(token, process.env.JWT_KEY!) as UserPayload;
 
-//   //   const user = await User.findOneById(payload.id);
-//   //   if (!user) {
-//   //     return next();
-//   //   }
+  const user = await userRepository.findOneById(payload.id);
+  if (!user) {
+    return next();
+  }
 
-//   //   req.user = user;
+  req.user = user;
 
-//   next();
-// };
+  next();
+};

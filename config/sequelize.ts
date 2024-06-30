@@ -83,7 +83,7 @@ const Bank = sequelize.define("banks", {
     primaryKey: true,
   },
   init_deposit: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.DOUBLE,
     allowNull: false,
   },
   name: {
@@ -194,14 +194,15 @@ BankAccount.hasMany(Transaction),
   };
 Transaction.belongsTo(BankAccount);
 
-User.sync();
-Bank.sync();
-BankAccount.sync();
-Transaction.sync();
-
 const startDbConnection = async () => {
   try {
-    await sequelize.authenticate();
+    await sequelize.authenticate().then(() => {
+      User.sync();
+      Bank.sync();
+      BankAccount.sync();
+      Transaction.sync();
+    });
+
     Logger.info("Connection to database has been established successfully.");
   } catch (error: any) {
     Logger.error("Unable to connect to the database:");

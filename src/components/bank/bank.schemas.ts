@@ -1,9 +1,9 @@
 import Joi from "joi";
 import { IValidationSchema } from "../../../utils/joi.interfaces";
 
-export const createBankAccountValidation: IValidationSchema = {
+export const createBankValidation: IValidationSchema = {
   body: Joi.object({
     name: Joi.string().min(2).required(),
-    bankId: Joi.number().required(),
+    init_deposit: Joi.number().required(),
   }).required(),
 };

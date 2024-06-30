@@ -4,6 +4,7 @@ import {
   ICreateUser,
   IUserSerialized,
 } from "../../../models/user/user.interface";
+import Common from "../../../utils/common";
 import Logger from "../../middlewares/logger";
 
 class UserRepository {
@@ -24,6 +25,19 @@ class UserRepository {
       }
       return null;
     } catch (err) {
+      return null;
+    }
+  }
+
+  async findOneById(id: number): Promise<IUserSerialized | null> {
+    const rows = await Common.dbFetch(UserRepository._tableName, { id });
+    if (rows?.length) {
+      const user = rows[0] as IUserSerialized;
+
+      // removing password from the object before serializing it
+      user.password = undefined;
+      return user;
+    } else {
       return null;
     }
   }

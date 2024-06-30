@@ -14,8 +14,8 @@ class BankAccountController {
       code,
       name,
       bankId,
-      initDeposit: bank?.initDeposit || 50000,
-      debit: bank?.initDeposit || 50000,
+      init_deposit: bank?.init_deposit || 50000,
+      debit: bank?.init_deposit || 50000,
     };
 
     const bankAccount = await bank_account_service.create(dataOject);

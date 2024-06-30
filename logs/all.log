@@ -917,3 +917,123 @@
 [Sun Jun 30 2024] [INFO] Listening on port 3000!
 [Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
 [Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  syntax error at or near "into"
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "initdeposit" of relation "banks" does not exist
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO banks (name, initDeposit)
+      Values ('TPBank', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "initdeposit" of relation "banks" does not exist
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO banks (name, init_deposit)
+      Values ('TPBank', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO banks (name, init_deposit)
+      Values ('TPBank', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] info
+[Sun Jun 30 2024] [INFO] success
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO banks (name, init_deposit)
+      Values ('TPBank', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] {
+  "id": 3,
+  "init_deposit": 500,
+  "name": "TPBank",
+  "createdAt": "2024-06-30T05:04:43.179Z",
+  "updatedAt": "2024-06-30T05:04:43.179Z"
+}
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] 
+      INSERT INTO banks (name, init_deposit)
+      Values ('TPBank', '500') RETURNING *;
+    
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!
+[Sun Jun 30 2024] [INFO] Connection to database has been established successfully.
+[Sun Jun 30 2024] [INFO] Listening on port 3000!

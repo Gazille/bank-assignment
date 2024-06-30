@@ -55,3 +55,6 @@
 [Sat Jun 29 2024] [ERROR] undefined
 [Sat Jun 29 2024] [ERROR] {}
 [Sat Jun 29 2024] [ERROR] {}
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  syntax error at or near "into"
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "initdeposit" of relation "banks" does not exist
+[Sun Jun 30 2024] [ERROR] SEQUELIZE ERROR:  column "initdeposit" of relation "banks" does not exist
