@@ -1,0 +1,57 @@
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  relation "users" does not exist
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  relation "users" does not exist
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  relation "users" does not exist
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  relation "users" does not exist
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "Tuan"
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "Tuan"
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "Tuan"
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  invalid input syntax for type integer: "DEFAULT"
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  column "firstname" of relation "users" does not exist
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  null value in column "createdAt" of relation "users" violates not-null constraint
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  column "created_at" of relation "users" does not exist
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] SEQUELIZE ERROR:  null value in column "createdAt" of relation "users" violates not-null constraint
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] undefined
+[Sat Jun 29 2024] [ERROR] {}
+[Sat Jun 29 2024] [ERROR] {}
