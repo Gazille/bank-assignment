@@ -11,6 +11,11 @@ class BankService {
     const result = await bankRepository.findOneById(id);
     return result;
   }
+
+  async getAllBank() {
+    const result = await bankRepository.getAll();
+    return result;
+  }
 }
 
 export default new BankService();

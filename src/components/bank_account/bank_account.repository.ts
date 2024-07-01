@@ -28,6 +28,24 @@ class BankAccountRepository {
     }
   }
 
+  async findAll(): Promise<IBankAccountSerialized[] | null> {
+    try {
+      const result = await sequelize.query(
+        `SELECT ba.*, u.firstname, u.lastname from ${BankAccountRepository._tableName} ba
+        INNER JOIN users u ON ba.user_id = u.id`,
+        { type: QueryTypes.SELECT }
+      );
+      if (result?.length) {
+        const bankAccounts = result as IBankAccountSerialized[];
+        return bankAccounts;
+      }
+      return null;
+    } catch (err) {
+      Logger.error(err);
+      return null;
+    }
+  }
+
   async create(
     bankAccount: ICreateBankAccount
   ): Promise<IBankAccountSerialized | null> {

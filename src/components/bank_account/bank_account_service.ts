@@ -27,6 +27,11 @@ class BankAccountService {
       return result;
     }
   }
+
+  async findAll() {
+    const result = bankAccountRepository.findAll();
+    return result;
+  }
 }
 
 export default new BankAccountService();

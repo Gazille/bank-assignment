@@ -27,6 +27,23 @@ class BankRepository {
     }
   }
 
+  async getAll(): Promise<IBankSerialized[] | null> {
+    try {
+      const result = await sequelize.query(
+        `select * from ${BankRepository._tableName}`,
+        { type: QueryTypes.SELECT }
+      );
+      if (result?.length) {
+        const user = result as IBankSerialized[];
+
+        return user;
+      }
+      return null;
+    } catch (err) {
+      return null;
+    }
+  }
+
   async create(bank: ICreateBank): Promise<IBankSerialized | null> {
     try {
       const insertQuery = await Common.dbInsertion(

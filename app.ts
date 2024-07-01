@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import "express-async-errors";
 import bodyParser from "body-parser";
+var cors = require("cors");
 
 import { NotFoundError } from "./src/errors/not-found-error";
 import { errorHandler } from "./src/middlewares/error-handler";
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(currentUser);
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/", (req: Request, res: Response): void => {
   res.send("Welcome to the home page!");

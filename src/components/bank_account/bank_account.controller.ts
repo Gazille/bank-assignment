@@ -55,6 +55,11 @@ class BankAccountController {
       return CustomResponse.sendWithError(res, "Invalid Credentials!", 400);
     }
   }
+
+  async getBankAccounts(req: Request, res: Response) {
+    const bankAccounts = await bank_account_service.findAll();
+    CustomResponse.send(res, bankAccounts, "Get Successfully", 200);
+  }
 }
 
 export default new BankAccountController();

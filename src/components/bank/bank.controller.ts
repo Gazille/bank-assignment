@@ -19,6 +19,11 @@ class BankController {
       throw new Error();
     }
   }
+
+  async getAllBank(req: Request, res: Response) {
+    const result = await bankService.getAllBank();
+    return customResponse.send(res, result, "Get Successfully", 200);
+  }
 }
 
 export default new BankController();

@@ -9,6 +9,7 @@ const router = Express.Router()
     validateRequest(createBankAccountValidation),
     bankAccountController.create
   )
-  .get("/", bankAccountController.getBankAccountsByUserId);
+  .get("/", bankAccountController.getBankAccountsByUserId)
+  .get("/all", bankAccountController.getBankAccounts);
 
 export default router;
