@@ -12,7 +12,7 @@ Project was created with:
 - Clone code with command ```git clone https://github.com/Gazille/bank-assignment.git``` and swith to branh master
 - Run ```npm install```
 - Create .env file .env.example
-- Run ```npm start`` to start source BE
+- Run ```npm start``` to start source BE
 
 ## Diagram
 ![image](https://github.com/Gazille/bank-assignment/assets/147364431/21ac47f8-c086-47ef-b51b-ac01b9d14142)
