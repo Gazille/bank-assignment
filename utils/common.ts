@@ -43,19 +43,19 @@ class Common {
   static async dbFetch(
     table: string,
     conditions: any = null,
-    selections: any = null
+    selections: any = null,
+    conditionOperator: any = "AND"
   ) {
     try {
       let query, replacements;
 
       const select = selections ? `${selections.join(", ")}` : "*";
-
       if (conditions) {
         query = `
           select ${select} from ${table}
           where ${Object.keys(conditions)
             .map((k) => `${k} = ?`)
-            .join(" AND ")};
+            .join(` ${conditionOperator} `)};
         `;
         replacements = [...Object.values(conditions)];
       } else {

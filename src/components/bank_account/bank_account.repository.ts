@@ -67,7 +67,6 @@ class BankAccountRepository {
     id: number | undefined
   ): Promise<IBankAccountSerialized[]> {
     try {
-      Logger.info(id);
       const query = `
         SELECT ba.*
         FROM ${BankAccountRepository._tableName} ba

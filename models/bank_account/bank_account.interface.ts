@@ -1,3 +1,5 @@
+import { ITransactionSerialized } from "../transaction/transaction.interface";
+
 export interface ICreateBankAccount {
   name: string;
   user_id: number | undefined;
@@ -13,6 +15,7 @@ export interface IBankAccountSerialized {
   bank_id: number;
   init_deposit: number;
   debit: number;
+  transactions?: ITransactionSerialized[];
 }
 
 export interface IUpdateBankAccount {

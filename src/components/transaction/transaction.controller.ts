@@ -11,21 +11,17 @@ class TransactionController {
     const { fromBankAccountId, toBankAccountId, note, ammount } = req.body;
 
     const fromBank = await bankAccountService.findOneById(fromBankAccountId);
-    if (!fromBank) {
-      return CustomResponse.sendWithError(res, "Invalid From Bank!", 400);
+    if (!fromBank || fromBank.user_id !== req.user?.id) {
+      return CustomResponse.sendWithError(res, "Invalid Bank Account!", 400);
     }
 
     const toBank = await bankAccountService.findOneById(toBankAccountId);
     if (!toBank) {
-      return CustomResponse.sendWithError(res, "Invalid To Bank!", 400);
+      return CustomResponse.sendWithError(res, "Invalid Bank Account!", 400);
     }
 
     if (Number(fromBank.debit) - Number(fromBank.init_deposit) < ammount) {
-      return CustomResponse.sendWithError(
-        res,
-        "Insufficient balance From Bank!",
-        400
-      );
+      return CustomResponse.sendWithError(res, "Insufficient balance!", 400);
     }
 
     const dataObject: ICreateTransaction = {
@@ -51,6 +47,15 @@ class TransactionController {
       await bankAccountService.updateById(toBank.id, dataUpdateToBank);
 
       CustomResponse.send(res, transaction, "Create Successfully", 200);
+    } else {
+      return CustomResponse.sendWithError(res, "Invalid Credentials!", 400);
+    }
+  }
+
+  async getAllByUserId(req: Request, res: Response) {
+    const transactions = await transactionService.getAllByUserId(req.user?.id);
+    if (transactions) {
+      CustomResponse.send(res, transactions, "Get Successfully", 200);
     } else {
       return CustomResponse.sendWithError(res, "Invalid Credentials!", 400);
     }

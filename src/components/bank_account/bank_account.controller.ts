@@ -1,8 +1,12 @@
 import { Request, Response } from "express";
-import { ICreateBankAccount } from "../../../models/bank_account/bank_account.interface";
+import {
+  IBankAccountSerialized,
+  ICreateBankAccount,
+} from "../../../models/bank_account/bank_account.interface";
 import CustomResponse from "../../../utils/custom-response";
 import Logger from "../../middlewares/logger";
 import bankService from "../bank/bank.service";
+import transactionService from "../transaction/transaction.service";
 import userService from "../user/user.service";
 import bank_account_service from "./bank_account_service";
 
@@ -20,7 +24,6 @@ class BankAccountController {
     };
 
     const bankAccount = await bank_account_service.create(dataOject);
-    Logger.info(bankAccount);
     if (bankAccount) {
       return CustomResponse.send(res, bankAccount, "Created Successfully", 200);
     } else {
@@ -31,8 +34,23 @@ class BankAccountController {
   async getBankAccountsByUserId(req: Request, res: Response) {
     const user = await userService.findOneById(req.user?.id);
     if (user) {
-      const bankAccount = await bank_account_service.findByUserId(req.user?.id);
-      CustomResponse.send(res, bankAccount, "Get Successfully", 200);
+      const bankAccounts = await bank_account_service.findByUserId(
+        req.user?.id
+      );
+      const result = await Promise.all(
+        (bankAccounts || [])?.map(
+          async (bankAccount: IBankAccountSerialized) => {
+            const transactions = await transactionService.getAllByBankAccountId(
+              bankAccount.id
+            );
+            return {
+              ...bankAccount,
+              transactions,
+            };
+          }
+        )
+      );
+      CustomResponse.send(res, result, "Get Successfully", 200);
     } else {
       return CustomResponse.sendWithError(res, "Invalid Credentials!", 400);
     }
