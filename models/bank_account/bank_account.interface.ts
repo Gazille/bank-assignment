@@ -14,3 +14,11 @@ export interface IBankAccountSerialized {
   init_deposit: number;
   debit: number;
 }
+
+export interface IUpdateBankAccount {
+  name?: string | undefined;
+  user_id?: number | undefined;
+  bank_id?: number | undefined;
+  debit: number;
+  [key: string]: any;
+}

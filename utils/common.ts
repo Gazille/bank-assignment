@@ -14,14 +14,6 @@ class Common {
     table: string,
     obj: any
   ): Promise<InserQuery | void> {
-    Logger.info(`
-      INSERT INTO ${table} (${Object.keys(obj)
-      .map((k) => k)
-      .join(", ")})
-      Values (${Object.values(obj)
-        .map((k) => `'${k}'`)
-        .join(", ")}) RETURNING *;
-    `);
     try {
       const [row, inserted] = await sequelize.query(
         `

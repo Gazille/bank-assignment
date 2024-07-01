@@ -3,10 +3,10 @@ import { sequelize } from "../../../config/sequelize";
 import {
   IBankAccountSerialized,
   ICreateBankAccount,
+  IUpdateBankAccount,
 } from "../../../models/bank_account/bank_account.interface";
 import Common from "../../../utils/common";
 import Logger from "../../middlewares/logger";
-import UserRepository from "../user/user.repository";
 
 class BankAccountRepository {
   static _tableName = "bank_accounts";
@@ -41,6 +41,22 @@ class BankAccountRepository {
         return newBank;
       }
       return null;
+    } catch (err) {
+      Logger.error(err);
+      return null;
+    }
+  }
+
+  async updateById(id: number, bankAccount: IUpdateBankAccount) {
+    try {
+      const query = `
+      UPDATE ${BankAccountRepository._tableName}
+      SET ${Object.keys(bankAccount)
+        .map((col) => `${col} = '${bankAccount[col]}'`)
+        .join(", ")}
+      WHERE id = '${id}';
+    `;
+      await sequelize.query(query, { type: QueryTypes.UPDATE });
     } catch (err) {
       Logger.error(err);
       return null;
