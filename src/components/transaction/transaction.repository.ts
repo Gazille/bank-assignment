@@ -54,12 +54,14 @@ class TransactionRepository {
   }
 
   async getAllByBankAccountId(
-    id: number | undefined
+    id: number | undefined,
+    condition: any
   ): Promise<ITransactionSerialized[] | null> {
     try {
       const rows = await Common.dbFetch(
         TransactionRepository._tableName,
         {
+          ...condition,
           from_bank_id: id,
           to_bank_id: id,
         },

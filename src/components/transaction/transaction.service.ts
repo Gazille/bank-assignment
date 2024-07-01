@@ -17,8 +17,11 @@ class TransactionService {
     return result;
   }
 
-  async getAllByBankAccountId(id: number | undefined) {
-    const result = await transactionRepository.getAllByBankAccountId(id);
+  async getAllByBankAccountId(id: number | undefined, condition: any = null) {
+    const result = await transactionRepository.getAllByBankAccountId(
+      id,
+      condition
+    );
     return result;
   }
 }
